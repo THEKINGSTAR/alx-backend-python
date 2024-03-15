@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """
 4. Define variables
-mandatory
-Define and annotate the following variables with the specified values:
 """
 
 
