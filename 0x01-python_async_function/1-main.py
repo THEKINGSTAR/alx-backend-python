@@ -1,4 +1,3 @@
-bob@dylan:~$ cat 1-main.py
 #!/usr/bin/env python3
 '''
 Test file for printing the correct output of the wait_n coroutine
