@@ -4,16 +4,19 @@
 """
 
 
-import asynico
+import asyncio
+import random
 
 
 async def wait_random(max_delay=10):
     """
     asynchronous coroutine that takes in an integer argument
     """
-    random(0, max_delay)
+
+    await asyncio.sleep(random.uniform(0, max_delay))
+    return (round(random.uniform(0, max_delay), 15))
 
 if __name__ == "__main__":
     import time
-    s = time.pref_counter()
-    asyncio.run()
+    s = time.perf_counter()
+    asyncio.run(wait_random())
