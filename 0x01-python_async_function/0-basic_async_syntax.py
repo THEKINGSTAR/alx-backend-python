@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
 0. The basics of async
+asynchronous coroutine takes in an integer argument
+and eventually returns it.
 """
 
 
