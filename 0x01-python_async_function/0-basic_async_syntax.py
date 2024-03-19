@@ -15,11 +15,3 @@ async def wait_random(max_delay=10):
 
     await asyncio.sleep(random.uniform(0, max_delay))
     return (round(random.uniform(0, max_delay), 15))
-
-if __name__ == "__main__":
-    """
-    MAIN PROGRAM
-    """
-    import time
-    s = time.perf_counter()
-    asyncio.run(wait_random())
