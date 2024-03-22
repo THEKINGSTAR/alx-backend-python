@@ -1,4 +1,4 @@
-#!usr/bin/env python3
+#!/usr/bin/env python3
 """
 function
 (do not create an async function, use the regular function syntax to do this)
