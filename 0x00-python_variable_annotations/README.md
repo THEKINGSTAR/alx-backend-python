@@ -1,9 +1,11 @@
 ```Curriculum```
 ```Short Specializations```
 # ```0x00. Python - Variable Annotations```
+
 ```Python```
 ```Back-end```
- 
+ ![alt text](py_sdt.png)
+
 ## ```Concepts```
 ### For this project, we expect you to look at this concept:
 
