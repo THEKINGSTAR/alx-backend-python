@@ -1,52 +1,47 @@
 
-Curriculum
-Short Specializations
-Average: 34.03%
-0x01. Python - Async
-Python
-Back-end
- By: Emmanuel Turlay, Staff Software Engineer at Cruise
- Weight: 1
- Project will start Jan 15, 2024 5:00 AM, must end by Jan 16, 2024 5:00 AM
- Checker was released at Jan 15, 2024 11:00 AM
- An auto review will be launched at the deadline
+# ```0x01. Python - Async```
+```Python```
+```Back-end```
+
+![alt text](Async.png)
+
+## ```Resources```
+## Read or watch:
+
+* Async IO in Python: A Complete Walkthrough
+* asyncio - Asynchronous I/O
+* random.uniform
+
+## ```Learning Objectives```
+### At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+>- ```async``` and ```await``` syntax
+>- How to execute an `async` program with ```asyncio```
+>- How to run concurrent coroutines
+>- How to create ```asyncio``` tasks
+>- How to use the ```random``` module
+
+## ```Requirements```
+## General
+>- A ```README.md``` file, at the root of the folder of the project, is man_datory
+>- Allowed editors: ```vi```, ```vim```, ```emacs```
+>- All your files will be interpreted/compiled on ``` Ubuntu 18.04 LTS``` using ```python3``` (version 3.7)
+>- All your files should end with a new line
+>- All your files must be executable
+>- The length of your files will be tested using ```wc```
+>- The first line of all your files should be exactly``` #!/usr/bin/env python3```
+>- Your code should use the ```pycodestyle``` style (version 2.5.x)
+>- All your functions and coroutines must be ```type-annotated```.
+>- All your modules should have a documentation ```(python3 -c 'print(__import__("my_module").__doc__)')```
+>- All your functions should have a documentation ```(python3 -c 'print(__import__("my_module").my_function.__doc__)'```
+>- A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
 
 
-Resources
-Read or watch:
+# ```Tasks```
+## ```0. The basics of async (mandatory)```
+### Write an asynchronous coroutine that takes in an integer argument (```max_delay```, with a default value of 10) named ```wait_random``` that waits for a random delay between 0 and ```max_delay``` (included and float value) seconds and eventually returns it.
 
-Async IO in Python: A Complete Walkthrough
-asyncio - Asynchronous I/O
-random.uniform
-Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
-
-async and await syntax
-How to execute an async program with asyncio
-How to run concurrent coroutines
-How to create asyncio tasks
-How to use the random module
-Requirements
-General
-A README.md file, at the root of the folder of the project, is mandatory
-Allowed editors: vi, vim, emacs
-All your files will be interpreted/compiled on Ubuntu 18.04 LTS using python3 (version 3.7)
-All your files should end with a new line
-All your files must be executable
-The length of your files will be tested using wc
-The first line of all your files should be exactly #!/usr/bin/env python3
-Your code should use the pycodestyle style (version 2.5.x)
-All your functions and coroutines must be type-annotated.
-All your modules should have a documentation (python3 -c 'print(__import__("my_module").__doc__)')
-All your functions should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)'
-A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
-Tasks
-0. The basics of async
-mandatory
-Write an asynchronous coroutine that takes in an integer argument (max_delay, with a default value of 10) named wait_random that waits for a random delay between 0 and max_delay (included and float value) seconds and eventually returns it.
-
-Use the random module.
-
+Use the ```random``` module.
+```shell
 bob@dylan:~$ cat 0-main.py
 #!/usr/bin/env python3
 
@@ -62,18 +57,17 @@ bob@dylan:~$ ./0-main.py
 9.034261504534394
 1.6216525464615306
 10.634589756751769
-Repo:
-
-GitHub repository: alx-backend-python
-Directory: 0x01-python_async_function
-File: 0-basic_async_syntax.py
+```
+# ```Repo:```
+>- GitHub repository: ```alx-backend-python```
+>- Directory: ```0x01-python_async_function```
+>- File: ```0-basic_async_syntax.py```
    
-1. Let's execute multiple coroutines at the same time with async
-mandatory
-Import wait_random from the previous python file that you’ve written and write an async routine called wait_n that takes in 2 int arguments (in this order): n and max_delay. You will spawn wait_random n times with the specified max_delay.
+## ```1. Let's execute multiple coroutines at the same time with async (mandatory)```
+### Import ```wait_random``` from the previous python file that you’ve written and write an async routine called ```wait_n``` that takes in 2 int arguments (in this order): n and ```max_delay```. You will spawn ```wait_random``` n times with the specified ```max_delay```.
 
-wait_n should return the list of all the delays (float values). The list of the delays should be in ascending order without using sort() because of concurrency.
-
+```wait_n``` should return the list of all the delays (float values). The list of the delays should be in ascending order without using ```sort()``` because of concurrency.
+```shell
 bob@dylan:~$ cat 1-main.py
 #!/usr/bin/env python3
 '''
@@ -93,20 +87,19 @@ bob@dylan:~$ ./1-main.py
 [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 The output for your answers might look a little different and that’s okay.
 
-Repo:
-
-GitHub repository: alx-backend-python
-Directory: 0x01-python_async_function
-File: 1-concurrent_coroutines.py
+```
+# ```Repo:```
+>- GitHub repository: ```alx-backend-python```
+>- Directory: ```0x01-python_async_function```
+>- File: ```1-concurrent_coroutines.py```
    
-2. Measure the runtime
-mandatory
-From the previous file, import wait_n into 2-measure_runtime.py.
+## ```2. Measure the runtime (mandatory)```
+### From the previous file, import ```wait_n``` into ```2-measure_runtime.py```.
 
-Create a measure_time function with integers n and max_delay as arguments that measures the total execution time for wait_n(n, max_delay), and returns total_time / n. Your function should return a float.
+Create a measure_time function with integers n and ```max_delay``` as arguments that measures the total execution time for ```wait_n(n, max_delay)```, and returns ```total_time / n```. Your function should return a float.
 
-Use the time module to measure an approximate elapsed time.
-
+Use the ```time``` module to measure an approximate elapsed time.
+```shell
 bob@dylan:~$ cat 2-main.py
 #!/usr/bin/env python3
 
@@ -119,18 +112,17 @@ print(measure_time(n, max_delay))
 
 bob@dylan:~$ ./2-main.py
 1.759705400466919
-Repo:
-
-GitHub repository: alx-backend-python
-Directory: 0x01-python_async_function
-File: 2-measure_runtime.py
+```
+# ```Repo:```
+>- GitHub repository: ```alx-backend-python```
+>- Directory: ```0x01-python_async_function```
+>- File: ```2-measure_runtime.py```
    
-3. Tasks
-mandatory
-Import wait_random from 0-basic_async_syntax.
+## ```3. Tasks (mandatory)```
+### Import ```wait_random``` from ```0-basic_async_syntax```.
 
-Write a function (do not create an async function, use the regular function syntax to do this) task_wait_random that takes an integer max_delay and returns a asyncio.Task.
-
+Write a function (do not create an async function, use the regular function syntax to do this) ```task_wait_random``` that takes an integer ```max_delay``` and returns a ```asyncio.Task```.
+```shell
 bob@dylan:~$ cat 3-main.py
 #!/usr/bin/env python3
 
@@ -148,16 +140,15 @@ asyncio.run(test(5))
 
 bob@dylan:~$ ./3-main.py
 <class '_asyncio.Task'>
-Repo:
-
-GitHub repository: alx-backend-python
-Directory: 0x01-python_async_function
-File: 3-tasks.py
+```
+# ```Repo:```
+>- GitHub repository: ```alx-backend-python```
+>- Directory: ```0x01-python_async_function```
+>- File: ```3-tasks.py```
    
-4. Tasks
-mandatory
-Take the code from wait_n and alter it into a new function task_wait_n. The code is nearly identical to wait_n except task_wait_random is being called.
-
+## ```4. Tasks (mandatory)```
+### Take the code from ```wait_n``` and alter it into a new function ```task_wait_n```. The code is nearly identical to ```wait_n``` except ```task_wait_random``` is being called.
+```shell
 bob@dylan:~$ cat 4-main.py
 #!/usr/bin/env python3
 
@@ -171,12 +162,12 @@ print(asyncio.run(task_wait_n(n, max_delay)))
 
 bob@dylan:~$ ./4-main.py
 [0.2261658205652346, 1.1942770588220557, 1.8410422186086628, 2.1457353803430523, 4.002505454641153]
-Repo:
-
-GitHub repository: alx-backend-python
-Directory: 0x01-python_async_function
-File: 4-tasks.py
+```
+# ```Repo:```
+>- GitHub repository: ```alx-backend-python```
+>- Directory: ```0x01-python_async_function```
+>- File: ```4-tasks.py```
    
-Copyright © 2024 ALX, All rights reserved.
+##  ```Copyright © 2024 ALX, All rights reserved.```
 
 
