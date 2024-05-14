@@ -1211,9 +1211,9 @@ We don’t want to make any actual external HTTP calls. Use ```unittest.mock.pat
 test_url="http://example.com", test_payload={"payload": True}
 test_url="http://holberton.io", test_payload={"payload": False}
 ```
-Test that the mocked get method was called exactly once (per input) with test_url as argument.
+Test that the mocked ```get``` method was called exactly once (per input) with ```test_url``` as argument.
 
-Test that the output of get_json is equal to test_payload.
+Test that the output of ```get_json``` is equal to ```test_payload```.
 
 ## ```Repo:```
 >- GitHub repository: ```alx-backend-python```
