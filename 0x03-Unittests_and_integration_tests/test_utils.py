@@ -3,14 +3,12 @@
 MODULE TO TEST!
 """
 
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, patch
 # from nose.tools import assert_equal
 from parameterized import parameterized
 import unittest
 from utils import access_nested_map
 from utils import get_json
-import requests
-import math
 
 
 class TestAccessNestedMap(unittest.TestCase):
@@ -53,7 +51,6 @@ class TestGetJson(unittest.TestCase):
     @parameterized.expand([
         ("http://example.com", {"payload": True}),
         ("http://example.com", {"payload": True})
-
     ])
     def test_get_json(self, url, payload):
         """
@@ -61,6 +58,6 @@ class TestGetJson(unittest.TestCase):
         returns a Mock object with a json method that returns test_payload
         """
         mock = MagicMock(return_value=payload)
-        with unittest.mock.patch('requests.get', mock):
+        with patch('requests.get', mock):
             self.assertEqual(get_json(url), payload)
         return
