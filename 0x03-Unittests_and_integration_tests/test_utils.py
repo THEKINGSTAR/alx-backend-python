@@ -3,7 +3,7 @@
 MODULE TO TEST!
 """
 
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, patch, Mock
 # from nose.tools import assert_equal
 from parameterized import parameterized
 import unittest
@@ -52,7 +52,7 @@ class TestGetJson(unittest.TestCase):
         ("http://example.com", {"payload": True}),
         ("http://example.com", {"payload": True})
     ])
-    def test_get_json(self, url, payload):
+    def _test_get_json(self, url, payload):
         """
         method to test that utils.get_json returns the expected result.
         returns a Mock object with a json method that returns test_payload
@@ -60,4 +60,25 @@ class TestGetJson(unittest.TestCase):
         mock = MagicMock(return_value=payload)
         with patch('requests.get', mock):
             self.assertEqual(get_json(url), payload)
+        return
+
+    @patch('your_module.requests.get')
+    def test_get_json(self, mock_get):
+        """
+        test that utils.get_json makes a GET request
+        with the URL that is passed to it.
+        """
+        test_cases = [
+            ("http://example.com", {"payload": True}),
+            ("http://holberton.io", {"payload": False})
+        ]
+        for url, payload in test_cases:
+            mock_response = Mock()
+            mock_response.json.return_value = payload
+            mock_get.return_value = mock_response
+
+            results = get_json(url)
+            mock_get.assert_called_once_with(url)
+            self.assertEqual(results, payload)
+
         return
