@@ -4,6 +4,7 @@ MODULE TO TEST!
 Parameterize and patch as decorators
 """
 
+
 import unittest
 from unittest.mock import patch, PropertyMock, Mock
 from parameterized import parameterized, parameterized_class
@@ -14,7 +15,6 @@ class TestGithubOrgClient(unittest.TestCase):
     """
     Tests for GithubOrgClient.
     """
-
     @parameterized.expand([
         ("google", {"google": True}),
         ("abc", {"abc": True}),
@@ -71,7 +71,6 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
     """
     Integration tests for GithubOrgClient.
     """
-
     @classmethod
     def setUpClass(cls):
         """
