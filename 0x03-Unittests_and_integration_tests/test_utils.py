@@ -90,7 +90,7 @@ class TestMemoize(unittest.TestCase):
             def a_property(self):
                 return self.a_method()
 
-        a_method_mock = MagicMock()
+        a_method_mock = MagicMock(return_value=42)
         with patch.object(TestClass, 'a_method', a_method_mock) as mock:
             test = TestClass()
             self.assertEqual(test.a_property, 42)
