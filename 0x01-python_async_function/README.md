@@ -85,9 +85,8 @@ bob@dylan:~$ ./1-main.py
 [0.9693881173832269, 1.0264573845731002, 1.7992690129519855, 3.641373003434587, 4.500011569340617]
 [0.07256214141415429, 1.518551245602588, 3.355762808432721, 3.7032593997182923, 3.7796178143655546, 4.744537840582318, 5.50781365463315, 5.758942587637626, 6.109707751654879, 6.831351588271327]
 [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-The output for your answers might look a little different and that’s okay.
-
 ```
+### The output for your answers might look a little different and that’s okay.
 # ```Repo:```
 >- GitHub repository: ```alx-backend-python```
 >- Directory: ```0x01-python_async_function```
