@@ -4,7 +4,7 @@ MODULE TO TEST!
 """
 
 from unittest.mock import MagicMock, patch, Mock
-from parameterized import parameterized
+from parameterized import parameterized, parameterized_class
 import unittest
 from utils import access_nested_map, memoize
 from utils import get_json
@@ -52,23 +52,20 @@ class TestGetJson(unittest.TestCase):
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False}),
     ])
-    def _test_get_json(self, url: str, payload: dict) -> Mock:
+    def _test_get_json(self, test_url: str, test_payload: dict) -> None:
         """
         method to test that utils.get_json returns the expected result.
-        returns a Mock object with a json method that returns test_payload
+        Use unittest.mock.patch to patch requests.get.
+        returns a Mock object with a json method that
+        returns
+        test_payload which you parametrize alongside
+        the test_url that you will pass to get_json
         """
-        mock_response = MagicMock()
-        mock_json = MagicMock(return_value=payload)
-        mock_response.json = mock_json
-        mock_get = MagicMock(return_value=mock_response)
-
-        with patch('requests.get', mock_get):
-            result = get_json(url)
-            mock_get.assert_called_once_with(url)
-            self.assertEqual(result, payload)
-            mock_json.assert_called_once()
-
-        return mock_get
+        attrs = {'json.return_value': test_payload}
+        mock_response = Mock(**attrs)
+        with patch('requests.get', return_value=mock_response) as mock_get:
+            self.assertEqual(get_json(test_url), test_payload)
+            mock_get.assert_called_once_with(test_url)
 
 
 class TestMemoize(unittest.TestCase):
