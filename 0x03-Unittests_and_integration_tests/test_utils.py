@@ -4,10 +4,9 @@ MODULE TO TEST!
 """
 
 from unittest.mock import MagicMock, patch, Mock
-# from nose.tools import assert_equal
 from parameterized import parameterized
 import unittest
-from utils import access_nested_map
+from utils import access_nested_map, memoize
 from utils import get_json
 from typing import Dict, Tuple, Union
 
@@ -51,10 +50,9 @@ class TestGetJson(unittest.TestCase):
     """
     @parameterized.expand([
         ("http://example.com", {"payload": True}),
-        ("http://holberton.io", {"payload": False})
+        ("http://holberton.io", {"payload": False}),
     ])
-
-    def _test_get_json(self, url: str, payload: dict) -> None:
+    def _test_get_json(self, url: str, payload: dict) -> Mock:
         """
         method to test that utils.get_json returns the expected result.
         returns a Mock object with a json method that returns test_payload
@@ -69,3 +67,24 @@ class TestGetJson(unittest.TestCase):
             mock_get.assert_called_once_with(url)
             self.assertEqual(result, payload)
             mock_json.assert_called_once()
+
+        return mock_get
+
+
+class TestMemoize(unittest.TestCase):
+    """
+
+    """
+    def test_memoize(self):
+        """
+
+        """
+        class TestClass:
+            """
+            """
+            def a_method(self):
+                return 42
+
+            @memoize
+            def a_property(self):
+                return self.a_method()
