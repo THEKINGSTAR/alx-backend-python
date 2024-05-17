@@ -62,8 +62,7 @@ class TestGetJson(unittest.TestCase):
         the test_url that you will pass to get_json
         """
         attrs = {'json.return_value': test_payload}
-        mock_response = Mock(**attrs)
-        with patch('requests.get', return_value=mock_response) as mock_get:
+        with patch('requests.get',  return_value=Mock(**attrs)) as mock_get:
             self.assertEqual(get_json(test_url), test_payload)
             mock_get.assert_called_once_with(test_url)
 
