@@ -77,27 +77,37 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         """
         Set up class for integration tests.
         """
+        cls.get_patcher = patch('client.get_json')
+        cls.mock_get_json = cls.get_patcher.start()
+
         cls.org_payload = {"login": "test"}
         cls.repos_payload = [{"name": "test_repo"}]
         cls.expected_repos = ["test_repo"]
         cls.apache2_repos = [{"license": {"key": "apache-2.0"}}]
 
+        cls.mock_get_json.side_effect = [
+            cls.org_payload,
+            cls.repos_payload,
+            cls.apache2_repos
+        ]
+
+    @classmethod
+    def tearDownClass(cls):
+        """
+        Tear down class after tests.
+        """
+        cls.get_patcher.stop()
+
     def test_public_repos(self):
         """
         Test GithubOrgClient.public_repos method.
         """
-        with patch('client.get_json', side_effect=[self.org_payload,
-                                                   self.repos_payload]):
-            goc = GithubOrgClient("test")
-            self.assertEqual(goc.public_repos(), self.expected_repos)
+        goc = GithubOrgClient("test")
+        self.assertEqual(goc.public_repos(), self.expected_repos)
 
     def test_public_repos_with_license(self):
         """
         Test GithubOrgClient.public_repos with license="apache-2.0".
         """
-        with patch('client.get_json', side_effect=[self.org_payload,
-                                                   self.repos_payload,
-                                                   self.apache2_repos]):
-            goc = GithubOrgClient("test")
-            self.assertEqual(goc.public_repos(
-                "apache-2.0"), self.apache2_repos)
+        goc = GithubOrgClient("test")
+        self.assertEqual(goc.public_repos("apache-2.0"), self.apache2_repos)
