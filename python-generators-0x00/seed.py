@@ -104,16 +104,31 @@ def insert_data(connection, data):
     """
     inserts data in the database if it does not exist
     """
-    cursor = connection.cursor()
-    try:
+    def insert_row(cursor, row):
         cursor.execute("""
             INSERT INTO user_data (user_id, name, email, age)
             VALUES (%s, %s, %s, %s)
             ON DUPLICATE KEY UPDATE name=VALUES(name), age=VALUES(age)
-        """, data)
-        connection.commit()
-        print("Data inserted successfully.")
-    except mysql.connector.Error as err:
+        """, row)
+
+    cursor = connection.cursor()
+
+    try:
+        if isinstance(data, str) and data.endswith(".csv") and os.path.exists(data):
+            # CSV file mode
+            for row in stream_csv_data(data):
+                insert_row(cursor, row)
+            connection.commit()
+            print("CSV data inserted successfully.")
+        elif isinstance(data, (list, tuple)) and len(data) == 4:
+            # Single row mode
+            insert_row(cursor, data)
+            connection.commit()
+            print("Single row inserted successfully.")
+        else:
+            raise ValueError("Invalid data type for insert_data().")
+
+    except Exception as err:
         print(f"Error inserting data: {err}")
     finally:
         cursor.close()
