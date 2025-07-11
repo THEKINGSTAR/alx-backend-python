@@ -1,54 +1,67 @@
-Python Generators
- Novice
- Weight: 1
- Ongoing second chance project - started Jun 30, 2025 1:00 AM, must end by Jul 14, 2025 1:00 AM
- Manual QA review must be done (request it when you are done with the project)
- An auto review will be launched at the deadline
-In a nutshell…
-Manual QA review: In second deadline
-Auto QA review: 0.0/15 mandatory
-Altogether: waiting on some reviews
-About the Project
+# **`Python Generators`**
+
+<div margin="center" style="border: 1px solid #ccc; border-radius: 6px; padding: 16px;  margin-bottom: 20px;">
+
+
+## **`About the Project`**
+
 This project introduces advanced usage of Python generators to efficiently handle large datasets, process data in batches, and simulate real-world scenarios involving live updates and memory-efficient computations. The tasks focus on leveraging Python’s yield keyword to implement generators that provide iterative access to data, promoting optimal resource utilization, and improving performance in data-driven applications.
 
-Learning Objectives
-By completing this project, you will:
+## **Learning Objectives**
 
-Master Python Generators: Learn to create and utilize generators for iterative data processing, enabling memory-efficient operations.
-Handle Large Datasets: Implement batch processing and lazy loading to work with extensive datasets without overloading memory.
-Simulate Real-world Scenarios: Develop solutions to simulate live data updates and apply them to streaming contexts.
-Optimize Performance: Use generators to calculate aggregate functions like averages on large datasets, minimizing memory consumption.
-Apply SQL Knowledge: Use SQL queries to fetch data dynamically, integrating Python with databases for robust data management.
-Requirements
-Proficiency in Python 3.x.
-Understanding of yield and Python’s generator functions.
-Familiarity with SQL and database operations (MySQL and SQLite).
-Basic knowledge of database schema design and data seeding.
-Ability to use Git and GitHub for version control and submission.
-Quiz questions
-Great! You've completed the quiz successfully! Keep going! (Show quiz)
-Tasks
-0. Getting started with python generators
-mandatory
-Score: 0.0% (Checks completed: 0.0%)
-Objective: create a generator that streams rows from an SQL database one by one.
+### **By completing this project, you will:**
 
-Instructions:
+1. **Master Python Generators:** Learn to create and utilize generators for iterative data processing, enabling memory-efficient operations.
 
-Write a python script that seed.py:
+1. **Handle Large Datasets:** Implement batch processing and lazy loading to work with extensive datasets without overloading memory.
 
-Set up the MySQL database, ALX_prodev with the table user_data with the following fields:
-user_id(Primary Key, UUID, Indexed)
-name (VARCHAR, NOT NULL)
-email (VARCHAR, NOT NULL)
-age (DECIMAL,NOT NULL)
-Populate the database with the sample data from this user_data.csv
-Prototypes:
-def connect_db() :- connects to the mysql database server
-def create_database(connection):- creates the database ALX_prodev if it does not exist
-def connect_to_prodev() connects the the ALX_prodev database in MYSQL
-def create_table(connection):- creates a table user_data if it does not exists with the required fields
-def insert_data(connection, data):- inserts data in the database if it does not exist
+1. **Simulate Real-world Scenarios:** Develop solutions to simulate live data updates and apply them to streaming contexts.
+
+1. **Optimize Performance:** Use generators to calculate aggregate functions like averages on large datasets, minimizing memory consumption.
+
+1. **Apply SQL Knowledge:** Use SQL queries to fetch data dynamically, integrating Python with databases for robust data management.
+
+## **Requirements**
+
+1. Proficiency in `Python 3.x`.
+1. Understanding of yield and Python’s generator functions.
+1. Familiarity with `SQL` and database operations (`MySQL` and `SQLite`).
+1. Basic knowledge of database schema design and data seeding.
+1. Ability to use `Git` and `GitHub` for version control and submission.
+
+
+
+
+# **`Tasks`**
+
+<div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
+
+<div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
+
+##`# **0. Getting started with python generators `(mandatory)`**
+
+</div>
+
+**Objective: create a generator that streams rows from an SQL database one by one.**
+
+**Instructions:**
+
+* Write a python script that seed.py:
+
+    * Set up the MySQL database, `ALX_prodev` with the table user_data with the following fields:
+    * `user_id(Primary Key, UUID, Indexed)`
+    * `name (VARCHAR, NOT NULL)`
+    * `email (VARCHAR, NOT NULL)`
+    * `age (DECIMAL,NOT NULL)`
+    * Populate the database with the sample data from this [user_data.csv](./user_data.csv)
+        * **Prototypes:**
+    * `def connect_db()`: - connects to the mysql database server
+    * `def create_database(connection)`: - creates the database `ALX_prodev` if it does not exist
+    * `def connect_to_prodev()` connects the the `ALX_prodev` database in MYSQL
+    * `def create_table(connection)`:- creates a table `user_data` if it does not exists with the required fields
+    * `def insert_data(connection, data)`:- inserts data in the database if it does not exist
+
+```sh
 faithokoth@ubuntu:python-generators-0x00 % cat 0-main.py
 #!/usr/bin/python3
 
@@ -82,24 +95,36 @@ Database ALX_prodev is present
 [('00234e50-34eb-4ce2-94ec-26e3fa749796', 'Dan Altenwerth Jr.', 'Molly59@gmail.com', 67), ('006bfede-724d-4cdd-a2a6-59700f40d0da', 'Glenda Wisozk', 'Miriam21@gmail.com', 119), ('006e1f7f-90c2-45ad-8c1d-1275d594cc88', 'Daniel Fahey IV', 'Delia.Lesch11@hotmail.com', 49), ('00af05c9-0a86-419e-8c2d-5fb7e899ae1c', 'Ronnie Bechtelar', 'Sandra19@yahoo.com', 22), ('00cc08cc-62f4-4da1-b8e4-f5d9ef5dbbd4', 'Alma Bechtelar', 'Shelly_Balistreri22@hotmail.com', 102)]
 
 faithokoth@h@ubuntu:python-generators-0x00 % 
+```
 
-Repo:
+## **Repo:**
 
-GitHub repository: alx-backend-python
-Directory: python-generators-0x00
-File: seed.py, README.md
- 
-1. generator that streams rows from an SQL database
-mandatory
-Score: 0.0% (Checks completed: 0.0%)
-Objective: create a generator that streams rows from an SQL database one by one.
+- **GitHub repository:** `alx-backend-python`
+- **Directory:** `python-generators-0x00`
+- **File:** `seed.py`, `README.md`
 
-Instructions:
+
+</div>
+
+<div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
+<div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
+
+### **1. generator that streams rows from an SQL database `(mandatory)`**
+
+</div>
+
+**Objective: create a generator that streams rows from an SQL database one by one.**
+
+### **Instructions:**
 
 In 0-stream_users.py write a function that uses a generator to fetch rows one by one from the user_data table. You must use the Yield python generator
 
-Prototype: def stream_users()
+
+**Prototype:** def stream_users()
+
 Your function should have no more than 1 loop
+
+```sh
 (venv)faithokoth@Faiths-MacBook-Pro python-generators-0x00 % cat 1-main.py 
 
 #!/usr/bin/python3
@@ -121,19 +146,28 @@ for user in islice(stream_users(), 6):
 {'user_id': '01187f09-72be-4924-8a2d-150645dcadad', 'name': 'Jonathon Jones', 'email': 'Jody.Quigley-Ziemann33@yahoo.com', 'age': 116}
 
 (venv) faithokoth@Faiths-MacBook-Pro python-generators-0x00 %
+```
 
-Repo:
+## **Repo:**
 
-GitHub repository: alx-backend-python
-Directory: python-generators-0x00
-File: 0-stream_users.py
- 
-2. Batch processing Large Data
-mandatory
-Score: 0.0% (Checks completed: 0.0%)
+- **GitHub repository:** `alx-backend-python`
+- **Directory:** `python-generators-0x00`
+- **File:** `0-stream_users.py`
+
+
+</div>
+
+<div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
+
+<div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
+
+### **2. Batch processing Large Data `(mandatory)`**
+
+</div>
+
 Objective: Create a generator to fetch and process data in batches from the users database
 
-Instructions:
+### **Instructions:**
 
 Write a function stream_users_in_batches(batch_size) that fetches rows in batches
 
@@ -141,10 +175,12 @@ Write a function batch_processing() that processes each batch to filter users ov
 
 You must use no more than 3 loops in your code. Your script must use the yield generator
 
-Prototypes:
+**Prototypes:**
 
 def stream_users_in_batches(batch_size)
 def batch_processing(batch_size)
+
+```sh
 (venv) faithokoth@Faiths-MacBook-Pro python-generators-0x00 % cat 2-main.py                
 #!/usr/bin/python3
 import sys
@@ -169,27 +205,38 @@ except BrokenPipeError:
 {'user_id': '01187f09-72be-4924-8a2d-150645dcadad', 'name': 'Jonathon Jones', 'email': 'Jody.Quigley-Ziemann33@yahoo.com', 'age': 116}
 
 (venv) faithokoth@Faiths-MacBook-Pro python-generators-0x00 % 
+```
 
-Repo:
+## **Repo:**
 
-GitHub repository: alx-backend-python
-Directory: python-generators-0x00
-File: 1-batch_processing.py
- 
-3. Lazy loading Paginated Data
-mandatory
-Score: 0.0% (Checks completed: 0.0%)
+- **GitHub repository:** `alx-backend-python`
+- **Directory:** `python-generators-0x00`
+- **File:** `1-batch_processing.py`
+
+</div>
+
+<div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
+
+<div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
+
+### **3. Lazy loading Paginated Data `(mandatory)`**
+
+</div>
+
 Objective: Simulte fetching paginated data from the users database using a generator to lazily load each page
 
-Instructions:
+### **Instructions:**
 
 Implement a generator function lazypaginate(pagesize) that implements the paginate_users(page_size, offset) that will only fetch the next page when needed at an offset of 0.
 
 You must only use one loop
 Include the paginate_users function in your code
 You must use the yield generator
-Prototype:
+
+**Prototype:**
+
 def lazy_paginate(page_size)
+
 #!/usr/bin/python3
 seed = __import__('seed')
 
@@ -203,7 +250,7 @@ def paginate_users(page_size, offset):
     return rows
 
 
-
+```sh
 
 (venv) faithokoth@Faiths-MacBook-Pro python-generators-0x00 % cat 3-main.py
 #!/usr/bin/python3
@@ -233,19 +280,27 @@ except BrokenPipeError:
 {'user_id': '01187f09-72be-4924-8a2d-150645dcadad', 'name': 'Jonathon Jones', 'email': 'Jody.Quigley-Ziemann33@yahoo.com', 'age': 116}
 
 {'user_id': '01ab6c5d-7ae2-4968-991a-d63e93d8d025', 'name': 'Forrest Heaney', 'email': 'Albert51@hotmail.com', 'age': 104}
-(venv) faithokoth@Faiths-MacBook-Pro python-generators-0x00 % 
-Repo:
+(venv) faithokoth@Faiths-MacBook-Pro python-generators-0x00 %
+```
 
-GitHub repository: alx-backend-python
-Directory: python-generators-0x00
-File: 2-lazy_paginate.py
- 
-4. Memory-Efficient Aggregation with Generators
-mandatory
-Score: 0.0% (Checks completed: 0.0%)
+## **Repo:**
+
+- **GitHub repository:** `alx-backend-python`
+- **Directory:** `python-generators-0x00`
+- **File:** `2-lazy_paginate.py`
+
+</div>
+
+<div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
+ <div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
+
+### **4. Memory-Efficient Aggregation with Generators `(mandatory)`**
+
+</div>
+
 Objective: to use a generator to compute a memory-efficient aggregate function i.e average age for a large dataset
 
-Instruction:
+### **Instruction:**
 
 Implement a generator stream_user_ages() that yields user ages one by one.
 
@@ -257,19 +312,30 @@ You must use no more than two loops in your script
 
 You are not allowed to use the SQL AVERAGE
 
-Repo:
 
-GitHub repository: alx-backend-python
-Directory: python-generators-0x00
-File: 4-stream_ages.py
+## **Repo:**
+
+- **GitHub repository:** `alx-backend-python`
+- **Directory:** `python-generators-0x00`
+- **File:** 4-stream_ages.py
+
+</div>
+
+<div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
  
-5. Manual Review
-mandatory
-Repo:
+<div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
 
-GitHub repository: alx-backend-python
-Directory: python-generators-0x00
+### **5. Manual Review `(mandatory)`**
 
+</div>
+
+## **Repo:**
+
+
+- **GitHub repository:** `alx-backend-python`
+- **Directory:** `python-generators-0x00`
+
+</div>
 
 
 
