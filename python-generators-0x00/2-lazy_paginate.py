@@ -28,6 +28,5 @@ def lazy_paginate(page_size):
         rows = paginate_users(page_size, offset)
         if not rows:
             break
-        for row in rows:
-            yield row
+        yield rows  # ❗ yield the entire page, NOT a single row
         offset += page_size
