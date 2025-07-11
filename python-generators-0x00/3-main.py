@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
-lazy_paginator = __import__('2-lazy_paginate').lazy_pagination
+#lazy_paginator = __import__('2-lazy_paginate').lazy_pagination
+lazy_paginator = __import__('2-lazy_paginate').lazy_paginate
 
 
 try:
@@ -9,7 +10,7 @@ try:
             print(user)
 
 except BrokenPipeError:
-sys.stderr.close()
+    sys.stderr.close()
 
 """
 (venv) faithokoth@Faiths-MacBook-Pro python-generators-0x00  % python 3-main.py | head -n 7
