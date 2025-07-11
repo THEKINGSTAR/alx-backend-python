@@ -63,13 +63,13 @@ def connect_to_prodev():
 
 def stream_user_ages():
     """
-    a memory-efficient aggregate function i.e average age for a large dataset
+    a memory-efficient aggregate function i.e avg_age for a large dataset
     that yields user ages one by one.
-    Use the generator in a different function to calculate the average age,
+    Use the generator in a different function to calculate the aveg_age,
     without loading the entire dataset into memory
-    Your script should print Average age of users: average age
+    Your script should print Av_age of users: av_age
     You must use no more than two loops in your script
-    You are not allowed to use the SQL AVERAGE
+    You are not allowed to use the SQL_AV
     """
     connection = connect_to_prodev()
     if not connection:
