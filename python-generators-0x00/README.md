@@ -38,7 +38,7 @@ This project introduces advanced usage of Python generators to efficiently handl
 
 <div style="border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin: 20px auto; max-width: 800px;">
 
-##`# **0. Getting started with python generators `(mandatory)`**
+### **0. Getting started with python generators `(mandatory)`**
 
 </div>
 
@@ -113,16 +113,16 @@ faithokoth@h@ubuntu:python-generators-0x00 %
 
 </div>
 
-**Objective: create a generator that streams rows from an SQL database one by one.**
+### **Objective: create a generator that streams rows from an SQL database one by one.**
 
 ### **Instructions:**
 
-In 0-stream_users.py write a function that uses a generator to fetch rows one by one from the user_data table. You must use the Yield python generator
+* In `0-stream_users.py` write a function that uses a generator to fetch rows one by one from the `user_data` table. You must use the Yield python generator
 
 
-**Prototype:** def stream_users()
-
-Your function should have no more than 1 loop
+* **Prototype:** 
+    * `def stream_users()`
+* Your function should have no more than 1 loop
 
 ```sh
 (venv)faithokoth@Faiths-MacBook-Pro python-generators-0x00 % cat 1-main.py 
@@ -165,20 +165,19 @@ for user in islice(stream_users(), 6):
 
 </div>
 
-Objective: Create a generator to fetch and process data in batches from the users database
+### **Objective:** Create a generator to fetch and process data in batches from the users database
 
 ### **Instructions:**
 
-Write a function stream_users_in_batches(batch_size) that fetches rows in batches
+* Write a function `stream_users_in_batches(batch_size)` that fetches rows in batches
 
-Write a function batch_processing() that processes each batch to filter users over the age of25`
+* Write a function `batch_processing()` that processes each batch to filter users over the age of`25`
 
-You must use no more than 3 loops in your code. Your script must use the yield generator
+* You must use no more than 3 loops in your code. Your script must use the `yield generator`
 
-**Prototypes:**
-
-def stream_users_in_batches(batch_size)
-def batch_processing(batch_size)
+* **Prototypes:**
+    * `def stream_users_in_batches(batch_size)`
+    * `def batch_processing(batch_size)`
 
 ```sh
 (venv) faithokoth@Faiths-MacBook-Pro python-generators-0x00 % cat 2-main.py                
@@ -227,16 +226,16 @@ Objective: Simulte fetching paginated data from the users database using a gener
 
 ### **Instructions:**
 
-Implement a generator function lazypaginate(pagesize) that implements the paginate_users(page_size, offset) that will only fetch the next page when needed at an offset of 0.
+* Implement a generator function lazypaginate(pagesize) that implements the `paginate_users(page_size, offset)` that will only fetch the next page when needed at an offset of `0`.
 
-You must only use one loop
-Include the paginate_users function in your code
-You must use the yield generator
+    * You must only use one `loop`
+    * Include the `paginate_users` function in your code
+    * You must use the `yield` generator
 
-**Prototype:**
+* **Prototype:**
+    * `def lazy_paginate(page_size)`
 
-def lazy_paginate(page_size)
-
+```python
 #!/usr/bin/python3
 seed = __import__('seed')
 
@@ -248,7 +247,7 @@ def paginate_users(page_size, offset):
     rows = cursor.fetchall()
     connection.close()
     return rows
-
+```
 
 ```sh
 
@@ -302,15 +301,15 @@ Objective: to use a generator to compute a memory-efficient aggregate function i
 
 ### **Instruction:**
 
-Implement a generator stream_user_ages() that yields user ages one by one.
+* Implement a generator `stream_user_ages()` that yields user ages one by one.
 
-Use the generator in a different function to calculate the average age without loading the entire dataset into memory
+* Use the generator in a different function to calculate the average age without loading the entire dataset into memory
 
-Your script should print Average age of users: average age
+* Your script should print `Average age of users: average age`
 
-You must use no more than two loops in your script
+* You must use no more than two loops in your script
 
-You are not allowed to use the SQL AVERAGE
+* You are not allowed to use the SQL `AVERAGE`
 
 
 ## **Repo:**
