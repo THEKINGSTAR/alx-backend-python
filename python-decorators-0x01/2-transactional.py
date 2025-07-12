@@ -27,6 +27,7 @@ def transactional(fucn):
             result = fucn(connection, *args, **kwargs)
             connection.commit()
             print(f"[LOG] Transition Commited @:{time}")
+            return result
         except Exception as e:
             connection.rollback()
             print(f"[ERROR] Transaction rolled back due to: {e} @{time}")
