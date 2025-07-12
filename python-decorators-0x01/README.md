@@ -98,7 +98,7 @@ users = fetch_all_users(query="SELECT * FROM users")
 
 **Instructions:**
 
-Complete the script below by Implementing a decorator with_db_connection that opens a database connection, passes it to the function and closes it afterword
+* Complete the script below by Implementing a decorator `with_db_connection` that opens a database connection, passes it to the function and closes it afterword
 
 ```sh
 import sqlite3 
@@ -133,10 +133,9 @@ print(user)
 
 **Instructions:**
 
-Complete the script below by writing a decorator transactional(func) that ensures a function running a database operation is wrapped inside a transaction.If the function raises an error, rollback; otherwise commit the transaction.
+* Complete the script below by writing a decorator `transactional(func`) that ensures a function running a database operation is wrapped inside a transaction.If the function raises an error, rollback; otherwise commit the transaction.
+* Copy the `with_db_connection` created in the previous task into the script
 
-
-1. **Copy the with_db_connection created in the previous task into the script**
 ```sh
 import sqlite3 
 import functools
@@ -168,7 +167,7 @@ update_user_email(user_id=1, new_email='Crawford_Cartwright@hotmail.com')
 
 **Instructions:**
 
-Complete the script below by implementing a retry_on_failure(retries=3, delay=2) decorator that retries the function of a certain number of times if it raises an exception
+* Complete the script below by implementing a `retry_on_failure(retries=3, delay=2)` decorator that retries the function of a certain number of times if it raises an exception
 
 ```sh
 import time
@@ -208,7 +207,7 @@ print(users)
 
 **Instructions:**
 
-Complete the code below by implementing a decorator cache_query(func) that caches query results based on the SQL query string
+* Complete the code below by implementing a decorator `cache_query(func)` that caches query results based on the SQL query string
 
 ```sh
 import time
@@ -250,5 +249,19 @@ users_again = fetch_users_with_cache(query="SELECT * FROM users")
 
 - **GitHub repository**: `alx-backend-python`
 - **Directory**: `python-decorators-0x01`
+</div>
+
+
+
+
+
+
+
+<div align="right">
+Copyright © 2025 ALX, All rights reserved.
+</div>  
+
+
+
 
 </div>
